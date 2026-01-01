@@ -79,12 +79,12 @@ import java.util.*;
 //composition relation seep
 class Student{
     private String name;
-    List<Student> courses;
-    public Student(String name,List<Student>courses){
+    List<Course> courses;
+    public Student(String name,List<Course>courses){
         this.name=name;
         this.courses=new ArrayList<>();
     }
-    public void addCourse(Student courseName){
+    public void addCourse(Course courseName){
         courses.add(courseName);
     }
     public String getName(){
@@ -92,17 +92,22 @@ class Student{
     }
 }
 class Course{
-    private String courseName;
-    List<Course> students;
+    private String Name;
+    List<Student> students;
     public Course(String courseName){
-        this.courseName=courseName;
+        this.Name=courseName;
         this.students=new ArrayList<>();
     }
-    public void addStudent(Course studentName){
+    public void addStudent(Student studentName){
         students.add(studentName);
     }
     public String getCourseName(){
-        return courseName;
+        return Name;
+    }
+    public void displayDetails(){
+        for(int i=0;i<students.size();i++){
+            System.out.println("student Name:"+students.get(i).getName());
+        }
     }
 }
 public class Main{
@@ -111,8 +116,8 @@ public class Main{
         Student student2=new Student("Amit Kumar Mondal",null);
         Course course1=new Course("Data Structure");
         Course course2=new Course("Algorithm");
-        course1.addStudent(course2);
-        student1.addCourse(student2);
+        course1.addStudent(student1);
+        student1.addCourse(course1);
         System.out.println("Student Name:"+student1.getName());
         System.out.println("Course Name:"+course1.getCourseName());
         System.out.println("Student Name:"+student2.getName());
