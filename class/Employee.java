@@ -7,11 +7,9 @@ class Employee {
     public void setName(String s) {
         emp_name = s;
     }
-
     public void setsalary(int val) {
         salary = val;
     }
-
     public int getsalary() {
         return salary;
     }

@@ -7,7 +7,6 @@ abstract class Car {
         System.out.println("Beep Beep");
     }
 }
-
 class ManualCar extends Car {
     public void start() {
         System.out.println("Push the start button");
